@@ -21,14 +21,14 @@
             margin: 0;
             height: 150px;
             overflow: hidden;
-        }
-        img {
-            max-width: 135%;
-            object-fit: cover;
-            opacity: 0.3;
-        }
-        img:hover {
-            opacity: 0.8;
+            img {
+                max-width: 135%;
+                object-fit: cover;
+                opacity: 0.3;
+            }
+            img:hover {
+                opacity: 0.8;
+            }
         }
     }
 }
@@ -61,8 +61,27 @@
     }
     .photos {
         figure {
-            width: 100px;
-            height: 100px;
+            img:hover {
+                opacity: 0.3 !important;
+            }
+        }
+    }
+    .quote {
+        width: 100%;
+        h1 {
+            font-size: 3em;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .home {
+        height: 100%;
+    }
+    .photos {
+        figure {
+            width: 100px !important;
+            height: 100px !important;
         }
     }
     .quote {
