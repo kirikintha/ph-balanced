@@ -1,7 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
+# Removing dist from ignore list, to test out code-deploy /dist
 /tmp
 
 # dependencies

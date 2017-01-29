@@ -1,3 +1,3 @@
 # PH-Balanced
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+PH-Balanced is my webpage for my personal info and web development.
