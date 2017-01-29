@@ -29,15 +29,7 @@ declare var $: any;
 export class PhotosComponent implements OnInit {
     //Aws bucket.
     public bucket: string = 'https://s3.amazonaws.com/ph-balanced/thumbnails/';
-
-    constructor() { 
-    }
-
     public thumbs: Array<string> = [];
-
-    ngOnInit() {
-        this.thumbs = _.shuffle(this.assets);
-    }
 
     //Images we want from the bucket.
     private assets = [
@@ -114,9 +106,17 @@ export class PhotosComponent implements OnInit {
         'IMG_4178.jpg'
     ];
 
+    constructor() {
+    }
+
+    ngOnInit() {
+        this.thumbs = _.shuffle(this.assets);
+    }
+
+
     //Get the image source from the url.
     getImage(item: string) {
-        let image = this.bucket + item;
+        const image = this.bucket + item;
         return image;
     };
 }

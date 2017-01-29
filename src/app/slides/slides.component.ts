@@ -29,18 +29,12 @@ declare var moment: any;
 })
 export class SlidesComponent implements OnInit {
 
-    constructor() { }
-
     public year = moment.tz(new Date(), 'America/Denver').format('YYYY');
 
     //Aws bucket.
     public bucket: string = 'https://s3.amazonaws.com/ph-balanced/backgrounds/';
 
     public slides: Array<string> = [];
-
-    ngOnInit() {
-        this.slides = _.shuffle(this.assets);
-    }
 
     private assets = [
         'IMG_0507.jpg',
@@ -69,10 +63,16 @@ export class SlidesComponent implements OnInit {
         'IMG_4381.jpg'
     ];
 
+    constructor() { }
+
+    ngOnInit() {
+        this.slides = _.shuffle(this.assets);
+    }
+
     //Scroll to the next slide.
     scrollNext(delta: number) {
-        var target = $('#slide-' + delta);
-        $('html, body').animate({ scrollTop: target.offset().top + 'px' }, 300)
+        const target = $('#slide-' + delta);
+        $('html, body').animate({ scrollTop: target.offset().top + 'px' }, 300);
     }
 
 }
