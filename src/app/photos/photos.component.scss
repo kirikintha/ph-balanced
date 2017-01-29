@@ -1,0 +1,80 @@
+/* 
+    @file photos.component.scss
+        Main content component.
+    @author paul.huntsberger@gmail.com
+*/
+
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import '../../_variables';
+.home {
+    overflow: hidden;
+    height: 83%;
+    background-color: $color-primary-1;
+    width: 100%;
+    .photos {
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
+        width: 141%;
+        figure {
+            width: 150px;
+            margin: 0;
+            height: 150px;
+            overflow: hidden;
+        }
+        img {
+            max-width: 135%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+        img:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.quote {
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    background-color: transparent;
+    padding: 15px;
+    top: 25.5%;
+    right: 0;
+    width: 48%;
+    text-align: right;
+    h1 {
+        font-size: 3.9em;
+        color: $phbalanced-white;
+        text-shadow: -1px -1px 0 $phbalanced-black, 1px -1px 0 $phbalanced-black, -1px 1px 0 $phbalanced-black, 1px 1px 0 $phbalanced-black;
+    }
+    h5 {
+        color: $phbalanced-white;
+        text-shadow: -1px -1px 0 $phbalanced-black, 1px -1px 0 $phbalanced-black, -1px 1px 0 $phbalanced-black, 1px 1px 0 $phbalanced-black;
+        font-style: italic;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .home {
+        height: 100%;
+    }
+    .photos {
+        figure {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .quote {
+        width: 100%;
+        h1 {
+            font-size: 3em;
+        }
+    }
+}
+
+@media (min-height: 1024px) {
+    .home {
+        height: 83%;
+    }
+}

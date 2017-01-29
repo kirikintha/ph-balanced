@@ -1,0 +1,26 @@
+<footer [@fadeIn]>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <!-- Add This Toolbox -->
+                <app-add-this></app-add-this>
+            </div>
+            <div class="col text-right">
+                <!-- Toggle Content -->
+                <div class="btn-group" role="group" aria-label="Toggle content">
+                    <button type="button" [ngClass]="{
+                            'btn': true,
+                            'btn-default': true,
+                            'btn-closed': closed === true
+                        }" (click)="toggleSlides()" title="Toggle content" alt="Toggle content">
+                        <i [ngClass]="{
+                            'fa': true,
+                            'fa-eye': closed === false,
+                            'fa-eye-slash': closed === true
+                        }"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

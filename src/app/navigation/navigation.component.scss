@@ -1,0 +1,33 @@
+/* 
+    @file navigation.component.scss
+        Main Styles for the application are here.
+    @author paul.huntsberger@gmail.com
+*/
+
+@import '../../_variables';
+
+.navbar {
+    background-color: $phbalanced-black-1;
+    color: $phbalanced-white;
+    .navbar-toggler {
+        background-color: $phbalanced-black-1;
+        border-color: $phbalanced-white;
+        color: $phbalanced-white;
+        cursor: pointer;
+        padding: 0.25rem 0.25rem;
+        top: 0.7rem;
+        .navbar-toggler-icon {
+            height: 1em;
+        }
+    }
+    .navbar-collapse {
+        background-color: $phbalanced-black-1;
+        padding: 0 0.5rem;
+    }
+    a {
+        color: $phbalanced-white;
+    }
+    a:hover {
+        color: $phbalanced-gray;
+    }
+}

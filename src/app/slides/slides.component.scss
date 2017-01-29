@@ -1,0 +1,128 @@
+/* 
+    @file slides.component.scss
+        Main content component.
+    @author paul.huntsberger@gmail.com
+*/
+
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@import '../../_variables';
+.indicator {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: -26px;
+    margin-bottom: -26px;
+    .btn {
+        cursor: pointer;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 1px $color-primary-1 solid;
+        background-color: $phbalanced-white;
+        color: $color-primary-1;
+        font-size: 1.4em;
+        box-shadow: 0 0px 15px 2px $phbalanced-white-1;
+    }
+    .btn:hover {
+        border: 1px $color-secondary-1-3 solid;
+        background-color: $color-secondary-1-2;
+        color: $phbalanced-white;
+        transform: scale(1.1);
+    }
+}
+
+.slide {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    article {
+        margin-top: 8.5%;
+        margin-bottom: 35px;
+        padding: 0 15px;
+        overflow: hidden;
+        .card {
+            margin-bottom: 10px;
+            .card-title {
+                color: $color-secondary-1-2;
+            }
+            .card-img-top {
+                max-width: 100%;
+                border-radius: 0;
+            }
+            a {
+                color: $color-primary-2;
+            }
+            a:hover {
+                color: $color-primary-3;
+            }
+            a.award {
+                color: $color-complement-3;
+            }
+            a.award:hover {
+                color: $color-complement-4;
+            }
+        }
+    }
+    p.copy {
+        color: $phbalanced-white-1;
+    }
+}
+
+.about {
+    article {
+        .card {
+            .card-title {
+                color: $color-secondary-1-3;
+            }
+        }
+    }
+}
+
+.tech {
+    .row.second {
+        margin-top: 10px;
+    }
+}
+
+.work {
+    height: auto;
+    min-height: 100%;
+    h2,
+    h5 {
+        margin-left: 25px;
+        color: $color-primary-2;
+        text-shadow: -1px -1px 0 $phbalanced-black, 1px -1px 0 $phbalanced-black, -1px 1px 0 $phbalanced-black, 1px 1px 0 $phbalanced-black;
+        font-style: italic;
+    }
+    h2 {
+        font-size: 3.7em;
+        font-weight: 700;
+    }
+    .the-work {
+        margin-top: 55px;
+        padding-right: 15px;
+    }
+    article {
+        margin-top: 50px;
+        .row {
+            padding-bottom: 15px;
+        }
+        .card {
+            .card-title {
+                color: $color-secondary-1-4;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .indicator {
+        display: none;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .card.with-image {
+        display: none;
+    }
+}

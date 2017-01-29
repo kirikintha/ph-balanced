@@ -1,0 +1,28 @@
+/*
+    @file _parallax.scss
+        This file is to handle parallax on desktop browsers,
+        and disable it on mobile.
+ */
+
+@import '~bootstrap/scss/bootstrap-grid.scss';
+@include media-breakpoint-up(lg) {
+    .parallax {
+        /* Set a specific height */
+        height: 100%;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .parallax {
+        /* Set a specific height */
+        height: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
