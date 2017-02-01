@@ -1,13 +1,15 @@
 <!-- Main Content Here -->
-<section class="quote">
-    <h1>Hello, my name is Paul.</h1>
-    <h5>I am a webdeveloper, database architect, father, husband and good guy!</h5>
-</section>
-<!-- Photos -->
-<section id="slide-0" class="home">
-    <article class=photos>
-        <figure class="pull-left" *ngFor="let image of thumbs">
-            <img [src]="getImage(image)" [@fadeIn]>
-        </figure>
-    </article>
-</section>
+<div class="photos-wrapper">
+    <section class="quote">
+        <h1>Hello, my name is Paul.</h1>
+        <h5>I am a webdeveloper, database architect, father, husband and good guy!</h5>
+    </section>
+    <!-- Photos -->
+    <section id="slide-0" class="home">
+        <article class=photos>
+            <figure class="pull-left" *ngFor="let image of thumbs">
+                <img [src]="getImage(image)" [@fadeIn]>
+            </figure>
+        </article>
+    </section>
+</div>

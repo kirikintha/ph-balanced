@@ -5,6 +5,12 @@
 */
 
 @import '../../_variables';
+nav {
+    max-width: 1366px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
 
 .navbar {
     background-color: $phbalanced-black-1;

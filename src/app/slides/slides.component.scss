@@ -35,6 +35,8 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
+    max-width: 1366px;
+    margin: 0 auto;
     article {
         margin-top: 8.5%;
         margin-bottom: 35px;

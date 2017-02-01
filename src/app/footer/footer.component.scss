@@ -12,6 +12,9 @@ footer {
     z-index: 3;
     width: 100%;
     overflow: hidden;
+    max-width: 1366px;
+    left: 50%;
+    transform: translateX(-50%);
     .btn {
         border: 0px $color-primary-1 solid;
         background-color: $color-primary-1;
@@ -52,8 +55,14 @@ footer {
     }
 }
 
+@media (min-height: 768px) {
+    footer {
+        top: 725px;
+    }
+}
+
 @media (min-height: 1024px) {
     footer {
-        bottom: 12%;
+        top: 828px;
     }
 }
