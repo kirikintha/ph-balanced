@@ -8,7 +8,10 @@
         "start": "ng serve",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "analyze": "webpack-bundle-analyzer ./dist/stats.json",
+        "build": "ng build --prod --aot --stats-json",
+        "start:prod": "ng serve --prod --aot"
     },
     "private": true,
     "dependencies": {
@@ -47,6 +50,7 @@
         "protractor": "~5.1.0",
         "ts-node": "~2.0.0",
         "tslint": "~4.4.2",
-        "typescript": "~2.0.0"
+        "typescript": "~2.0.0",
+        "webpack-bundle-analyzer": "^2.4.0"
     }
 }
