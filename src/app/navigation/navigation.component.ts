@@ -15,7 +15,7 @@ export class NavigationComponent implements OnInit {
     }
 
     //Scroll to the top
-    scrollTop(e) {
+    scrollTop() {
         $('html, body').animate({ scrollTop: '0px' }, 300);
     }
 
