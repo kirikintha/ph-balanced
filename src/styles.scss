@@ -47,6 +47,7 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 
 .monoton-regular {
@@ -63,10 +64,14 @@ body {
   text-align: center;
   animation: blink 12s infinite;
   -webkit-animation: blink 12s infinite;
+  &.purple {
+    text-shadow: 0 0 5px #9400d3, 0 0 15px #9400d3, 0 0 20px #9400d3,
+      0 0 40px #9400d3, 0 0 60px #8a2be2, 0 0 10px #9932cc, 0 0 98px #8a2be2;
+  }
 }
 
 .hero {
-  position: absolute;
+  position: fixed;
   left: 5%;
   top: 5%;
   z-index: 100;
@@ -213,4 +218,32 @@ video {
   transform: rotate(3deg) translateX(-10px) translateY(-25px); /* Rotate the div by 45 degrees */
   transform-origin: center;
   will-change: transform;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+button.neon {
+  color: white;
+  font-size: 2em;
+  text-shadow: 0 0 5px #9400d3, 0 0 15px #9400d3, 0 0 20px #9400d3,
+    0 0 40px #9400d3, 0 0 60px #8a2be2, 0 0 10px #9932cc, 0 0 98px #8a2be2;
+}
+
+svg.neon-chevron {
+  width: 35px;
+  height: 35px;
+  filter: url(#neon-glow);
 }

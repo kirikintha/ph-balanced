@@ -1,12 +1,40 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { useEffect, useRef, useState } from 'react';
 import styles from './app.module.scss';
+import KeepScrolling from './keep-scrolling';
 import NeonSign from './neon-sign';
 import NoirVideo from './noir-video';
 
 export function App() {
+  const [isVisible, setIsVisible] = useState(false);
+  const navbarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.target === navbarRef.current) {
+          setIsVisible(entry.isIntersecting);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.1,
+    });
+
+    if (navbarRef.current) {
+      observer.observe(navbarRef.current);
+    }
+
+    return () => {
+      if (navbarRef.current) {
+        observer.unobserve(navbarRef.current);
+      }
+    };
+  }, []);
   return (
     <>
-      <nav className="navbar">
+      <nav ref={navbarRef} className="navbar">
         <div className="container-fluid text-center">
           <span className="navbar-brand mx-auto playwrite-fr-moderne-400">
             PH-Balanced Solutions
@@ -60,6 +88,7 @@ export function App() {
           </p>
         </div>
       </footer>
+      <KeepScrolling isVisible={isVisible} />
     </>
   );
 }
