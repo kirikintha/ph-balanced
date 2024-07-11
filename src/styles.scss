@@ -1,1 +1,216 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+@function edge-triangles() {
+  @return polygon(
+    0% 0%,
+    8% 4%,
+    0% 12%,
+    12% 18%,
+    0% 22%,
+    10% 28%,
+    0% 34%,
+    14% 38%,
+    0% 44%,
+    10% 50%,
+    0% 56%,
+    12% 60%,
+    0% 66%,
+    8% 72%,
+    0% 78%,
+    14% 82%,
+    0% 88%,
+    10% 94%,
+    0% 100%,
+    /* Left edge */ 100% 100%,
+    92% 96%,
+    100% 88%,
+    86% 82%,
+    100% 76%,
+    90% 70%,
+    100% 64%,
+    88% 58%,
+    100% 52%,
+    90% 46%,
+    100% 40%,
+    86% 34%,
+    100% 28%,
+    92% 22%,
+    100% 16%,
+    88% 10%,
+    100% 4%,
+    92% 0% /* Right edge */
+  );
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.monoton-regular {
+  font-family: 'Monoton', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.neon {
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: 'Sacramento', cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+.hero {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  z-index: 100;
+  font-size: 5em;
+  transform: rotate(-10deg);
+}
+
+.playwrite-fr-moderne-300 {
+  font-family: 'Playwrite FR Moderne', cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.playwrite-fr-moderne-400 {
+  font-family: 'Playwrite FR Moderne', cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-tight-300 {
+  font-family: 'Inter Tight', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-tight-400 {
+  font-family: 'Inter Tight', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+video {
+  @extend .object-fit-contain, .border, .border-3, .deco;
+  width: 100%;
+}
+
+.deco {
+  outline: 1px solid #fff; /* adjust the 2px here */
+  outline-offset: -10px; /* control the offset of the rectangle */
+}
+
+.corners-top {
+  background: var(--bs-border-color);
+  margin: 50px auto;
+  position: relative;
+  box-shadow: 0 1px 7px hsla(0, 0%, 0%, 0.2);
+}
+
+/* Corner Effect */
+.corners-top:after,
+.corners-top:before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  content: '';
+  height: 50px;
+  position: absolute;
+  top: -20px;
+  width: 100px;
+  box-shadow: 0 5px 10px -7px hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px; /* Add bevel effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Add border for 3D effect */
+  clip-path: edge-triangles();
+}
+.corners-top:after {
+  left: -50px;
+  transform: rotate(-45deg);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  will-change: transform;
+}
+.corners-top:before {
+  right: -50px;
+  transform: rotate(45deg);
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  will-change: transform;
+}
+
+.corners-bottom {
+  background: var(--bs-border-color);
+  position: relative;
+  box-shadow: 0 1px 7px hsla(0, 0%, 0%, 0.2);
+}
+
+/* Corner Effect */
+.corners-bottom:after,
+.corners-bottom:before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  content: '';
+  height: 50px;
+  position: absolute;
+  bottom: -20px; /* Position at the bottom */
+  width: 100px;
+  border-radius: 5px; /* Add bevel effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Add border for 3D effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  clip-path: edge-triangles();
+}
+.corners-bottom:after {
+  left: -50px;
+  transform: rotate(45deg); /* Adjust rotation for bottom-left */
+  will-change: transform;
+}
+.corners-bottom:before {
+  right: -50px;
+  transform: rotate(-45deg); /* Adjust rotation for bottom-right */
+  will-change: transform;
+}
+
+.los-angeles {
+  transform: rotate(-1deg) translateX(10px); /* Rotate the div by 45 degrees */
+  transform-origin: center;
+  will-change: transform;
+}
+
+.jazz {
+  transform: rotate(1deg) translateX(-35px); /* Rotate the div by 45 degrees */
+  transform-origin: center;
+  will-change: transform;
+}
+
+.desert {
+  transform: rotate(-2deg) translateX(10px) translateY(-20px); /* Rotate the div by 45 degrees */
+  transform-origin: center;
+  will-change: transform;
+}
+
+.co-springs {
+  transform: rotate(3deg) translateX(-25px); /* Rotate the div by 45 degrees */
+  transform-origin: center;
+  will-change: transform;
+}
+
+.savannah {
+  transform: rotate(3deg) translateX(-10px) translateY(-25px); /* Rotate the div by 45 degrees */
+  transform-origin: center;
+  will-change: transform;
+}

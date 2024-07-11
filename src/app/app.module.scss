@@ -1,1 +1,7 @@
-/* Your styles goes here. */
+.lightbox {
+  background-image: url('/assets/Background.jpeg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: contrast(1.2) brightness(0.9);
+}
