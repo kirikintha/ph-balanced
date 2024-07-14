@@ -18,7 +18,7 @@ const NeonSign = () => {
       'Bem-vindo!',
       'Bem-vindoa!',
       'እንኳን ደህና መጣህ!',
-      'いらっしゃいませ！',
+      'いらっしゃいませ!',
       '환영!',
       'καλως ΗΡΘΑΤΕ!',
       'வரவேற்பு!',
@@ -45,10 +45,36 @@ const NeonSign = () => {
             randomIndex = Math.floor(Math.random() * welcomes.length);
           } while (randomIndex === lastIndex);
 
-          const keyframes = Array.from({ length: 10 }, (_, i) => ({
-            opacity: Math.random(),
-            offset: i / 9,
-          }));
+          const keyframesSet = [
+            {
+              textShadow:
+                '0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000',
+              color: '#fff6a9',
+              opacity: Math.random(),
+            },
+            {
+              textShadow:
+                '0 0 2px rgba(74, 74, 74, 0.5), 0 0 5px rgba(74, 74, 74, 0.3)',
+              color: 'rgba(74, 74, 74, 0.7)',
+              opacity: 1,
+            },
+          ];
+
+          const keyframes = Array.from({ length: 10 }, (_, i) => {
+            const randomKeyframe =
+              keyframesSet[Math.floor(Math.random() * keyframesSet.length)];
+            return {
+              ...randomKeyframe,
+              offset: i / 9,
+            };
+          });
+
+          keyframes.push({
+            opacity: 0,
+            offset: 1,
+            textShadow: '',
+            color: '',
+          });
 
           const animation = messageRef.current.animate(keyframes, {
             duration: 1000,
@@ -97,7 +123,7 @@ const NeonSign = () => {
     };
   }, [welcomes, lastIndex]);
   return (
-    <h1 ref={messageRef} className="playwrite-fr-moderne-300 neon hero">
+    <h1 ref={messageRef} className="neon hero">
       {currentMessage}
     </h1>
   );

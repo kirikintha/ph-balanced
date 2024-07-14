@@ -20,11 +20,8 @@ const KeepScrolling: React.FC<KeepScrollingProps> = ({ isVisible }) => {
         ref={footerRef}
         className="fixed-bottom d-flex justify-content-center align-items-center"
       >
-        <button
-          type="button"
-          className="btn neon purple d-flex flex-column align-items-center"
-        >
-          Keep Scrolling
+        <div className="d-flex flex-column justify-content-center align-items-center bounce">
+          <h4 className="neon purple">Keep Scrolling</h4>
           <svg
             className="neon-chevron"
             viewBox="0 0 100 100"
@@ -83,10 +80,10 @@ const KeepScrolling: React.FC<KeepScrollingProps> = ({ isVisible }) => {
               points="50,70 20,40 30,30 50,50 70,30 80,40"
               fill="white"
               stroke="#9400d3"
-              stroke-width="1"
+              strokeWidth="1"
             />
           </svg>
-        </button>
+        </div>
       </div>
     </CSSTransition>
   );

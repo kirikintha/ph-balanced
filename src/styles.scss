@@ -1,48 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '../node_modules/bootstrap/scss/bootstrap';
-
-@function edge-triangles() {
-  @return polygon(
-    0% 0%,
-    8% 4%,
-    0% 12%,
-    12% 18%,
-    0% 22%,
-    10% 28%,
-    0% 34%,
-    14% 38%,
-    0% 44%,
-    10% 50%,
-    0% 56%,
-    12% 60%,
-    0% 66%,
-    8% 72%,
-    0% 78%,
-    14% 82%,
-    0% 88%,
-    10% 94%,
-    0% 100%,
-    /* Left edge */ 100% 100%,
-    92% 96%,
-    100% 88%,
-    86% 82%,
-    100% 76%,
-    90% 70%,
-    100% 64%,
-    88% 58%,
-    100% 52%,
-    90% 46%,
-    100% 40%,
-    86% 34%,
-    100% 28%,
-    92% 22%,
-    100% 16%,
-    88% 10%,
-    100% 4%,
-    92% 0% /* Right edge */
-  );
-}
+@import './animations';
+@import './fonts';
 
 html,
 body {
@@ -50,61 +10,42 @@ body {
   overflow-x: hidden;
 }
 
-.monoton-regular {
-  font-family: 'Monoton', sans-serif;
-  font-weight: 400;
-  font-style: normal;
+body {
+  @extend .comfortaa-300;
+  background-image: url('/assets/Background.jpeg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .neon {
+  @extend .sacramento;
   text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
     0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
   color: #fff6a9;
-  font-family: 'Sacramento', cursive;
   text-align: center;
-  animation: blink 12s infinite;
-  -webkit-animation: blink 12s infinite;
   &.purple {
     text-shadow: 0 0 5px #9400d3, 0 0 15px #9400d3, 0 0 20px #9400d3,
       0 0 40px #9400d3, 0 0 60px #8a2be2, 0 0 10px #9932cc, 0 0 98px #8a2be2;
   }
+  &.off {
+    text-shadow: 0 0 2px rgba(74, 74, 74, 0.5), 0 0 5px rgba(74, 74, 74, 0.3) !important;
+    color: rgba(74, 74, 74, 0.7) !important;
+  }
 }
 
 .hero {
+  @include font-size(5rem);
   position: fixed;
-  left: 5%;
-  top: 5%;
+  left: 50px;
+  top: 150px;
   z-index: 100;
-  font-size: 5em;
   transform: rotate(-10deg);
-}
-
-.playwrite-fr-moderne-300 {
-  font-family: 'Playwrite FR Moderne', cursive;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.playwrite-fr-moderne-400 {
-  font-family: 'Playwrite FR Moderne', cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.inter-tight-300 {
-  font-family: 'Inter Tight', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.inter-tight-400 {
-  font-family: 'Inter Tight', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+  backface-visibility: hidden;
+  max-width: 700px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
 }
 
 video {
@@ -147,12 +88,14 @@ video {
   transform: rotate(-45deg);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
   will-change: transform;
+  backface-visibility: hidden;
 }
 .corners-top:before {
   right: -50px;
   transform: rotate(45deg);
   box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .corners-bottom {
@@ -183,41 +126,48 @@ video {
   left: -50px;
   transform: rotate(45deg); /* Adjust rotation for bottom-left */
   will-change: transform;
+  backface-visibility: hidden;
 }
 .corners-bottom:before {
   right: -50px;
   transform: rotate(-45deg); /* Adjust rotation for bottom-right */
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .los-angeles {
   transform: rotate(-1deg) translateX(10px); /* Rotate the div by 45 degrees */
   transform-origin: center;
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .jazz {
   transform: rotate(1deg) translateX(-35px); /* Rotate the div by 45 degrees */
   transform-origin: center;
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .desert {
   transform: rotate(-2deg) translateX(10px) translateY(-20px); /* Rotate the div by 45 degrees */
   transform-origin: center;
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .co-springs {
   transform: rotate(3deg) translateX(-25px); /* Rotate the div by 45 degrees */
   transform-origin: center;
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .savannah {
   transform: rotate(3deg) translateX(-10px) translateY(-25px); /* Rotate the div by 45 degrees */
   transform-origin: center;
   will-change: transform;
+  backface-visibility: hidden;
 }
 
 .fade-enter {
@@ -246,4 +196,24 @@ svg.neon-chevron {
   width: 35px;
   height: 35px;
   filter: url(#neon-glow);
+}
+
+.bounce {
+  animation: bounce 1.25s 2 ease-in-out;
+}
+
+.content {
+  .row {
+    @extend .align-items-center, .pb-2;
+  }
+  section {
+    @extend .col-md-6;
+    h2 {
+      @include font-size(3rem);
+    }
+    img {
+      @extend .img-fluid, .border, .border-3, .mx-auto, .d-block;
+      max-height: 450px;
+    }
+  }
 }

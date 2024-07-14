@@ -13,6 +13,7 @@ permissions:
 jobs:
   main:
     runs-on: ubuntu-latest
+    environment: Production
     steps:
       - uses: actions/checkout@v4
         with:
@@ -35,3 +36,19 @@ jobs:
       # - run: npx nx-cloud record -- echo Hello World
       - run: npx nx affected -t lint test build
       - run: npx nx affected --parallel 1 -t e2e-ci
+
+      # Configure AWS credentials
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1 # Change to your AWS region
+
+      # Upload files to S3
+      - name: Upload to S3
+        uses: aws-actions/s3-sync@v1
+        with:
+          source-dir: 'path/to/your/files' # Change to the directory you want to upload
+          destination-bucket: 'your-s3-bucket-name' # Change to your S3 bucket name
+          destination-dir: 'optional/destination/path' # Optional: specify a destination path in the bucket
