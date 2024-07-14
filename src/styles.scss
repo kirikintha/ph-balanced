@@ -217,3 +217,22 @@ svg.neon-chevron {
     }
   }
 }
+
+.poirot {
+  @extend .border, .border-3, .deco;
+  max-width: 250px;
+}
+
+.not-found {
+  max-width: 550px;
+  h1,
+  h2,
+  h3,
+  a {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+  a {
+    @include font-size(3rem);
+  }
+}

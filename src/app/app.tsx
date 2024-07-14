@@ -371,10 +371,18 @@ export function App() {
             rights reserved.
           </p>
           <p>
-            <a href="tel:+14049542051">+1.404.954.2051</a>
+            <a
+              href="tel:+14049542051"
+              className="link-underline-light text-white"
+            >
+              +1.404.954.2051
+            </a>
           </p>
           <p>
-            <a href="https://calendly.com/paul-huntsberger/thirty-minute-meeting">
+            <a
+              href="https://calendly.com/paul-huntsberger/thirty-minute-meeting"
+              className="link-underline-light text-white"
+            >
               Schedule a Meeting
             </a>
           </p>
