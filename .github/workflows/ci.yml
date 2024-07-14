@@ -35,6 +35,8 @@ jobs:
           node-version: 22.3.0
           cache: 'npm'
 
+      # This should really go into a separate command, then environments for non-prod prod
+      # But, because this is just me pushing out to one space - going to change this in the future.
       - run: |
           echo "NODE_ENV=development" >> $GITHUB_ENV
           npm ci
@@ -42,7 +44,7 @@ jobs:
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       - run: npx nx affected -t lint test build
       - run: npx nx affected --parallel 1 -t e2e-ci
-      - run: nx run ph-balanced:build:production
+      - run: npx nx run ph-balanced:build:production
 
       # Configure AWS credentials
       - name: Configure AWS credentials
