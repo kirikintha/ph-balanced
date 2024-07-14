@@ -366,20 +366,15 @@ export function App() {
       </div>
       <footer className="bg-dark text-white text-center py-3 mt-auto">
         <div className="container">
-          <p className="mb-0">
+          <p>
             ©{currentYear} PH-Balanced Solutions, Atlanta, Georgia USA. All
             rights reserved.
           </p>
           <p>
-            <a href="tel:+14049542051" className="text-white">
-              +1.404.954.2051
-            </a>
+            <a href="tel:+14049542051">+1.404.954.2051</a>
           </p>
           <p>
-            <a
-              href="https://calendly.com/paul-huntsberger/thirty-minute-meeting"
-              className="text-white"
-            >
+            <a href="https://calendly.com/paul-huntsberger/thirty-minute-meeting">
               Schedule a Meeting
             </a>
           </p>
