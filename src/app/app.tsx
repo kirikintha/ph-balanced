@@ -7,6 +7,7 @@ import NoirVideo from './noir-video';
 export function App() {
   const [isVisible, setIsVisible] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -366,14 +367,21 @@ export function App() {
       <footer className="bg-dark text-white text-center py-3 mt-auto">
         <div className="container">
           <p className="mb-0">
-            ©2024 PH-Balanced Solutions, Atlanta, Georgia USA. All rights
-            reserved.
+            ©{currentYear} PH-Balanced Solutions, Atlanta, Georgia USA. All
+            rights reserved.
           </p>
           <p>
-            Put in the voip number and make an email address for
-            refererals@ph-balanced.com. Put a Calendly link in too. I want to
-            internationalize this as well with some general translations. I hate
-            to use google translate, but that's what I've got.
+            <a href="tel:+14049542051" className="text-white">
+              +1.404.954.2051
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://calendly.com/paul-huntsberger/thirty-minute-meeting"
+              className="text-white"
+            >
+              Schedule a Meeting
+            </a>
           </p>
         </div>
       </footer>
