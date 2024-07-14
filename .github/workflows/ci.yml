@@ -44,8 +44,8 @@ jobs:
       - run: npx nx affected --parallel 1 -t e2e-ci
 
       # List contents of the dist directory to verify the build output path
-      - name: List dist directory contents
-        run: ls -R dist
+      - name: List directory contents
+        run: ls -R
 
       # Configure AWS credentials
       - name: Configure AWS credentials
