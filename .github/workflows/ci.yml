@@ -54,4 +54,4 @@ jobs:
       # Upload files to S3
       - name: Upload to S3
         run: |
-          aws s3 sync /dist s3://ph-balanced.com/ --delete
+          aws s3 sync /dist/ph-balanced/ s3://ph-balanced.com/ --delete

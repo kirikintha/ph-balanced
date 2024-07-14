@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useEffect, useRef, useState } from 'react';
 import styles from './app.module.scss';
 import KeepScrolling from './keep-scrolling';
@@ -45,7 +44,7 @@ export function App() {
         <div className="row">
           <section className="col-lg-6">
             <NeonSign />
-            <NoirVideo className="los-angeles" src="/assets/La-Noir.mov" />
+            <NoirVideo className="los-angeles" src="/assets/LA-Noir.mov" />
           </section>
           <section className="col-lg-6">
             <div className="row">
