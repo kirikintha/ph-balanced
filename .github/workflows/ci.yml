@@ -43,6 +43,14 @@ jobs:
       - run: npx nx affected -t lint test build
       - run: npx nx affected --parallel 1 -t e2e-ci
 
+      # List contents of the dist directory to verify the build output path
+      - name: List directory contents
+        run: find . -maxdepth 2 -print
+
+      # Find index.html file anywhere in the project
+      - name: Find index.html file
+        run: find . -name "index.html"
+
       # Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4.0.2
