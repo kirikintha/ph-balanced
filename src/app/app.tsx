@@ -44,7 +44,10 @@ export function App() {
         <div className="row">
           <section className="col-lg-6">
             <NeonSign />
-            <NoirVideo className="los-angeles" src="/assets/LA-Noir.mov" />
+            <NoirVideo
+              className="los-angeles"
+              src="/assets/Los-Angeles-Noir.mov"
+            />
           </section>
           <section className="col-lg-6">
             <div className="row">
