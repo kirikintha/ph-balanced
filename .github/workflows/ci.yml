@@ -45,10 +45,13 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1 # Change to your AWS region
 
+      # Install AWS CLI
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
       # Upload files to S3
       - name: Upload to S3
-        uses: aws-actions/s3-sync@v1
-        with:
-          source-dir: 'path/to/your/files' # Change to the directory you want to upload
-          destination-bucket: 'your-s3-bucket-name' # Change to your S3 bucket name
-          destination-dir: 'optional/destination/path' # Optional: specify a destination path in the bucket
+        run: |
+          aws s3 sync /dist s3://ph-balanced.com/ --delete
