@@ -15,6 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
+      # Install AWS CLI
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -32,6 +38,19 @@ jobs:
       - run: npm ci
       - uses: nrwl/nx-set-shas@v4
 
+      # Cache Playwright browsers
+      - name: Cache Playwright browsers
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      # Install Playwright browsers
+      - name: Install Playwright browsers
+        run: npx playwright install
+
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
       - run: npx nx affected -t lint test build
@@ -39,17 +58,11 @@ jobs:
 
       # Configure AWS credentials
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4.0.2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1 # Change to your AWS region
-
-      # Install AWS CLI
-      - name: Install AWS CLI
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
 
       # Upload files to S3
       - name: Upload to S3
