@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import './animations';
 @import './fonts';
@@ -79,6 +77,7 @@ svg.neon-chevron {
     @extend .col-md-6;
     h2 {
       @include font-size(3rem);
+      @extend .pt-3;
     }
     img {
       @extend .img-fluid, .border, .border-3, .mx-auto, .d-block;
