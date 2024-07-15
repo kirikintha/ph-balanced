@@ -21,7 +21,12 @@ const NoirVideo: React.FC<NoirVideoProps> = ({ src, className, delay = 0 }) => {
   return (
     <div className={`noir-video ${className}`}>
       <div className="corners-top" />
-      <video ref={videoRef} src={src} muted></video>
+      <video
+        ref={videoRef}
+        src={`/assets/${src}.mp4`}
+        muted
+        poster={`/assets/${src}.png`}
+      ></video>
       <div className="corners-bottom" />
     </div>
   );

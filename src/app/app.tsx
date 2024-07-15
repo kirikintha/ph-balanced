@@ -45,39 +45,28 @@ export function App() {
         <div className="row">
           <section className="col-lg-6">
             <NeonSign />
-            <NoirVideo
-              className="los-angeles"
-              src="/assets/Los-Angeles-Noir.mp4"
-            />
+            <NoirVideo className="los-angeles" src="Los-Angeles-Noir" />
           </section>
           <section className="col-lg-6">
             <div className="row">
               <section className="col-6">
-                <NoirVideo
-                  className="jazz"
-                  src="/assets/Jazz-Noir.mp4"
-                  delay={1000}
-                />
+                <NoirVideo className="jazz" src="Jazz-Noir" delay={1000} />
               </section>
               <section className="col-6">
                 <NoirVideo
                   className="co-springs"
-                  src="/assets/CoSprings-Noir.mp4"
+                  src="CoSprings-Noir"
                   delay={4000}
                 />
               </section>
               <section className="col-6">
-                <NoirVideo
-                  className="desert"
-                  src="/assets/Desert-Noir.mp4"
-                  delay={3000}
-                />
+                <NoirVideo className="desert" src="Desert-Noir" delay={3000} />
               </section>
               <section className="col-6">
                 <NoirVideo
                   className="savannah"
                   delay={2000}
-                  src="/assets/Savannah-Noir.mp4"
+                  src="Savannah-Noir"
                 />
               </section>
             </div>
