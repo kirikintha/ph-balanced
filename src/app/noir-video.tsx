@@ -25,7 +25,8 @@ const NoirVideo: React.FC<NoirVideoProps> = ({ src, className, delay = 0 }) => {
         ref={videoRef}
         src={`/assets/${src}.mp4`}
         muted
-        poster={`/assets/${src}.png`}
+        poster={`/assets/${src}.jpg`}
+        preload="metadata"
       ></video>
       <div className="corners-bottom" />
     </div>
