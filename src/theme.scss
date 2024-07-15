@@ -1,0 +1,115 @@
+.neon {
+  @extend .sacramento;
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500,
+    0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  text-align: center;
+  &.purple {
+    text-shadow: 0 0 5px #9400d3, 0 0 15px #9400d3, 0 0 20px #9400d3,
+      0 0 40px #9400d3, 0 0 60px #8a2be2, 0 0 10px #9932cc, 0 0 98px #8a2be2;
+  }
+  &.off {
+    text-shadow: 0 0 2px rgba(74, 74, 74, 0.5), 0 0 5px rgba(74, 74, 74, 0.3) !important;
+    color: rgba(74, 74, 74, 0.7) !important;
+  }
+}
+
+.hero {
+  @include font-size(5rem);
+  position: fixed;
+  left: 50px;
+  top: 150px;
+  z-index: 100;
+  transform: rotate(-10deg);
+  backface-visibility: hidden;
+  max-width: 700px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.deco {
+  outline: 1px solid #fff; /* adjust the 2px here */
+  outline-offset: -10px; /* control the offset of the rectangle */
+}
+
+.corners-top {
+  background: var(--bs-border-color);
+  margin: 50px auto;
+  position: relative;
+  box-shadow: 0 1px 7px hsla(0, 0%, 0%, 0.2);
+}
+
+/* Corner Effect */
+.corners-top:after,
+.corners-top:before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  content: '';
+  height: 50px;
+  position: absolute;
+  top: -20px;
+  width: 100px;
+  box-shadow: 0 5px 10px -7px hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px; /* Add bevel effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Add border for 3D effect */
+  clip-path: edge-triangles();
+}
+
+.corners-top:after {
+  left: -50px;
+  transform: rotate(-45deg);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.corners-top:before {
+  right: -50px;
+  transform: rotate(45deg);
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.corners-bottom {
+  background: var(--bs-border-color);
+  position: relative;
+  box-shadow: 0 1px 7px hsla(0, 0%, 0%, 0.2);
+}
+
+/* Corner Effect */
+.corners-bottom:after,
+.corners-bottom:before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  content: '';
+  height: 50px;
+  position: absolute;
+  bottom: -20px; /* Position at the bottom */
+  width: 100px;
+  border-radius: 5px; /* Add bevel effect */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Add border for 3D effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for 3D effect */
+  clip-path: edge-triangles();
+}
+
+.corners-bottom:after {
+  left: -50px;
+  transform: rotate(45deg); /* Adjust rotation for bottom-left */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.corners-bottom:before {
+  right: -50px;
+  transform: rotate(-45deg); /* Adjust rotation for bottom-right */
+  will-change: transform;
+  backface-visibility: hidden;
+}

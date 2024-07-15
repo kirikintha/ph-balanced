@@ -47,7 +47,7 @@ export function App() {
             <NeonSign />
             <NoirVideo
               className="los-angeles"
-              src="/assets/Los-Angeles-Noir.mov"
+              src="/assets/Los-Angeles-Noir.mp4"
             />
           </section>
           <section className="col-lg-6">
@@ -55,21 +55,21 @@ export function App() {
               <section className="col-6">
                 <NoirVideo
                   className="jazz"
-                  src="/assets/Jazz-Noir.mov"
+                  src="/assets/Jazz-Noir.mp4"
                   delay={1000}
                 />
               </section>
               <section className="col-6">
                 <NoirVideo
                   className="co-springs"
-                  src="/assets/CoSprings-Noir.mov"
+                  src="/assets/CoSprings-Noir.mp4"
                   delay={4000}
                 />
               </section>
               <section className="col-6">
                 <NoirVideo
                   className="desert"
-                  src="/assets/Desert-Noir.mov"
+                  src="/assets/Desert-Noir.mp4"
                   delay={3000}
                 />
               </section>
@@ -77,7 +77,7 @@ export function App() {
                 <NoirVideo
                   className="savannah"
                   delay={2000}
-                  src="/assets/Savannah-Noir.mov"
+                  src="/assets/Savannah-Noir.mp4"
                 />
               </section>
             </div>
