@@ -23,11 +23,14 @@ const NoirVideo: React.FC<NoirVideoProps> = ({ src, className, delay = 0 }) => {
       <div className="corners-top" />
       <video
         ref={videoRef}
-        src={`/assets/${src}.mp4`}
         muted
+        playsInline
+        autoPlay
         poster={`/assets/${src}.jpg`}
         preload="metadata"
-      ></video>
+      >
+        <source src={`/assets/${src}.mp4`} type="video/mp4" />
+      </video>
       <div className="corners-bottom" />
     </div>
   );
