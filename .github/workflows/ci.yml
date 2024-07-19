@@ -35,7 +35,6 @@ jobs:
       - run: npm ci
         env:
           NODE_ENV: development
-          NODE_OPTIONS: --no-deprecation
 
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
@@ -43,20 +42,9 @@ jobs:
 
       # Run Nx commands
       - run: npx nx run ph-balanced:lint
-        env:
-          NODE_OPTIONS: --no-deprecation
-
       - run: npx nx run ph-balanced:test
-        env:
-          NODE_OPTIONS: --no-deprecation
-
       - run: npx nx run ph-balanced:e2e-ci
-        env:
-          NODE_OPTIONS: --no-deprecation
-
       - run: npx nx run ph-balanced:build:production
-        env:
-          NODE_OPTIONS: --no-deprecation
 
       # Configure AWS credentials
       - name: Configure AWS credentials
