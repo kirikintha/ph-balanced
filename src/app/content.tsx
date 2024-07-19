@@ -10,21 +10,20 @@ const Content = () => {
         <section>
           <h2>Finding the right Balance</h2>
           <p>
-            Yes, "AI" it out there and we're embracing it, here we lead by
+            Yes, "AI" is out there and we're embracing it, here at PH-Balanced we lead by
             example.
           </p>
           <p>
-            Generative AI is a big dopamine hit and is rewarding to see how much
+            Generative AI has had a big leap forward and it is rewarding to see how much
             it can accomplish in a short period of time. However it is not
             perfect and has limitations.
           </p>
           <p>
-            Take a deep dive on the generated images we created. We want you to
-            be critical of the output. There is a logic behind the images and
-            the styles we chose.
+            We want to challenge you to take a deep dive on the generated images we created. Be critical of the output. There is a logic behind the images and
+            the styles we chose and prompts we engineered.
           </p>
           <p>
-            If you are expecting Machine Learning, Deep learning and neural nets
+            What we want you to learn from your deep dive is that if you are expecting Machine Learning, Deep learning and neural nets
             to be a magic wand to wave, change your expectations.
           </p>
           <p>
@@ -73,7 +72,7 @@ const Content = () => {
           <h2>Executing on Deliverables</h2>
           <p>
             If you're still reading this, good for you! TLDR; If you can't
-            execute on deliverables, you can't find success.
+            execute on deliverables, you won't achieve success.
           </p>
           <p>
             The first step is to define what success means to you and your
@@ -98,7 +97,7 @@ const Content = () => {
         <section>
           <h2>Finding the right technology</h2>
           <p>
-            Vendor Assessments, Security Assessments, build vs. buy, TCO, ROI,
+            Vendor Assessments, Security Assessments, build vs. buy, TCO, ROI, SOC.
             It's a lot to handle.
           </p>
           <p>
@@ -128,9 +127,9 @@ const Content = () => {
         <section>
           <h2>Critical Thinking</h2>
           <p>
-            Critical thinking is not about looking on social media and then
+            Critical thinking is not about lurking on social media and then
             deciding what the next trend is by scrolling your feed and saying:
-            "I want to be the next...".
+            "I want to be the next...". That rarely if ever works without a lot of capital investment.
           </p>
           <p>
             At PH-Balanced, we did the whole social media thing and we've gone
@@ -143,7 +142,7 @@ const Content = () => {
             gaps are in the market and help you find your niche that is
             sustainable.
           </p>
-          <p>If we can be brilliant along the way, all the better.</p>
+          <p>If we can be brilliant along the way, all the better!</p>
         </section>
       </div>
       <div className="row">
@@ -159,10 +158,10 @@ const Content = () => {
           </p>
           <p>
             Running a business can be a chore and stressful beyond belief. The
-            world is a funny place.
+            world is a funny 'ol place.
           </p>
           <p>
-            Our goal at PH-Balanced is to provide a really cool work experience.
+            Our goal at PH-Balanced is to provide a really healhty work experience.
             The best ideas come from when we have fun.
           </p>
           <p>
@@ -174,7 +173,7 @@ const Content = () => {
           <p>
             And honestly, we had to step in a few times because we knew better.
             Generative assistants still don't know how to keep one organized and
-            we don't want them compeletely in our file system yet.
+            we don't want to grant them all access in our file system yet.
           </p>
         </section>
       </div>
@@ -185,11 +184,11 @@ const Content = () => {
         <section>
           <h2>Communicating Results</h2>
           <p>
-            At the core of our delivery strategy suppling you with a way to
-            communicate back to your stakeholders with honesty and conviction.
+            At the core of our delivery strategy is supplying you with a way to
+            communicate back to your stakeholders with honesty and conviction. We want you to know that when you speak, you can back up what you say.
           </p>
           <p>
-            What drives that core is the ability to see the micro and macro
+            What drives this core is the ability to see the micro and macro
             level of engineering with a great deal of perception. And we'll
             create great documentation to that effect.
           </p>
@@ -204,8 +203,8 @@ const Content = () => {
             volume, or have the same densities.
           </p>
           <p>
-            And, let's face it: one person's definition of success is sometimes
-            another's definition of failure.
+            Let's face it: one person's definition of success is sometimes
+            another's definition of failure. We'll help you control that.
           </p>
           <p>
             We will pledge to you that we will be honest with how to proceed in
@@ -249,9 +248,10 @@ const Content = () => {
         <section>
           <h2>A desire to learn</h2>
           <p>
-            Our vision statement is this: You are only limited by your
-            imagination, and a desire to learn.
+            Our vision statement is this: 
           </p>
+          <blockquote className="blockquote text-center"><p>You are only limited by your
+          imagination, and a desire to learn.</p></blockquote>
           <p>
             Our goal is to learn everything we can about your organization, your
             mission, your culture and how you are successful.
@@ -265,7 +265,7 @@ const Content = () => {
             work. Well, maybe keeping the network up, or the datacenter intact,
             or keeping bugs out of the application code, keeping funders and the
             executive team in the know, problem solving, writing
-            documentation... but other than that: totally not work.
+            documentation... but other than that: totally not work. Promise.
           </p>
           <p>
             Want to know more? Our contact information is in the footer. Thanks
