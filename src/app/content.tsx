@@ -222,7 +222,7 @@ const Content = () => {
           <h2>Developing the next Move</h2>
           <p>
             A quick admission here - we're ok at chess, but collectively we will
-            ever be a champion. However, we can program the code that makes an
+            never be a champion. However, we can program the code that makes an
             AI bot that will play chess for us.
           </p>
           <p>
@@ -262,7 +262,7 @@ const Content = () => {
           </p>
           <p>
             The best thing about how we work, is that it shouldn't feel like
-            work. Well, maybe keeping the network up, or the datacenter in tact,
+            work. Well, maybe keeping the network up, or the datacenter intact,
             or keeping bugs out of the application code, keeping funders and the
             executive team in the know, problem solving, writing
             documentation... but other than that: totally not work.
