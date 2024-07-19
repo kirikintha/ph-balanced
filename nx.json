@@ -22,18 +22,8 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    }
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } }
   ],
   "defaultProject": "ph-balanced",
   "generators": {
@@ -44,14 +34,9 @@
         "linter": "eslint",
         "bundler": "vite"
       },
-      "component": {
-        "style": "scss"
-      },
-      "library": {
-        "style": "scss",
-        "linter": "eslint"
-      }
+      "component": { "style": "scss" },
+      "library": { "style": "scss", "linter": "eslint" }
     }
   },
-  "nxCloudAccessToken": "YTk0OGZlNGQtYWMxYS00ZjQ2LTk0YjAtMTUzYmE1NmFlNDAyfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "NDhmYjY1MzItZTI4ZS00ZjIzLWE1NmItYjFmYjkwMDUxYjMzfHJlYWQtd3JpdGU="
 }
