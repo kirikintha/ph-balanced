@@ -42,7 +42,7 @@ jobs:
 
       - run: npm install -g @nrwl/cli
 
-      - run: npx nx-cloud start-ci-run --distribute-on="2 linux-medium-js"
+      - run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       - name: Run Linter
