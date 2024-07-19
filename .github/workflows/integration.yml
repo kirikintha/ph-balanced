@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - develop
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  main:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Connect your workspace on nx.app and uncomment this to enable task distribution.
+      # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
+
+      # Cache node_modules
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 22.3.0
+          cache: 'npm'
+
+      # This should really go into a separate command, then environments for non-prod prod
+      # But, because this is just me pushing out to one space - going to change this in the future.
+      - run: |
+          echo "NODE_ENV=development" >> $GITHUB_ENV
+          npm ci
+
+      - run: npm install -g @nrwl/cli
+
+      - run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
+
+      # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
+      - name: Run Linter
+        run: npx nx affected:lint --stop-agents-after=60
+      - name: Run Tests
+        run: npx nx affected:test --stop-agents-after=60
+      - name: Run E2E
+        run: npx nx affected --parallel 1 -t e2e-ci --stop-agents-after=60
