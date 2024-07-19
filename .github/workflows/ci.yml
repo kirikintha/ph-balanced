@@ -40,6 +40,7 @@ jobs:
       # But, because this is just me pushing out to one space - going to change this in the future.
       - run: |
           echo "NODE_ENV=development" >> $GITHUB_ENV
+          echo "SASS_SILENCE_DEPRECATION_WARNINGS=true" >> $GITHUB_ENV
           npm ci
 
       - run: npm install -g @nrwl/cli
@@ -52,9 +53,9 @@ jobs:
       - name: Run Tests
         run: npx nx affected:test --base=main --stop-agents-after=120
       - name: Run E2E
-        run: npx nx affected --parallel 1 -t e2e-ci --stop-agents-after=120
+        run: npx nx affected:e2e-ci --parallel 1 --stop-agents-after=120
       - name: Build
-        run: npx nx affected build production --stop-agents-after=120
+        run: npx nx run ph-balanced:build:production
 
       # Configure AWS credentials
       - name: Configure AWS credentials
