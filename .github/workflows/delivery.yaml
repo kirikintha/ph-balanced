@@ -2,8 +2,7 @@ name: CI
 
 on:
   release:
-    types:
-      - created
+    types: [published]
 
 permissions:
   actions: read
@@ -19,6 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           ref: main # Ensure the main branch is checked out
 
       # Install AWS CLI
@@ -42,9 +42,6 @@ jobs:
           echo "NODE_ENV=production" >> $GITHUB_ENV
           npm ci
 
-      - run: npm install -g @nrwl/cli
-
-      - run: npx nx-cloud start-ci-run --distribute-on="3 linux-medium-js"
       - name: Build
         run: npx nx run ph-balanced:build:production
         env:
