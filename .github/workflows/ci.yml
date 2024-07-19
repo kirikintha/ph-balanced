@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   main:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     environment: Production
     steps:
@@ -41,12 +42,19 @@ jobs:
           echo "NODE_ENV=development" >> $GITHUB_ENV
           npm ci
 
-      - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
+      - run: npm install -g @nrwl/cli
+
+      - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js"
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
-      - run: npx nx affected -t lint test
-      - run: npx nx affected --parallel 1 -t e2e-ci
-      - run: npx nx run ph-balanced:build:production
+      - name: Run Linter
+        run: nx affected:lint --base=main --stop-agents-after=120
+      - name: Run Tests
+        run: nx affected:test --base=main --stop-agents-after=120
+      - name: Run E2E
+        run: npx nx affected --parallel 1 -t e2e-ci --stop-agents-after=120
+      - name: Build
+        run: npx nx affected build production --stop-agents-after=120
 
       # Configure AWS credentials
       - name: Configure AWS credentials
