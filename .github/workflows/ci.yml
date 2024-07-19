@@ -46,11 +46,11 @@ jobs:
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       - name: Run Linter
-        run: npx nx affected:lint --base=main --stop-agents-after=120
+        run: npx nx affected:lint --stop-agents-after=60
       - name: Run Tests
-        run: npx nx affected:test --base=main --stop-agents-after=120
+        run: npx nx affected:test --stop-agents-after=60
       - name: Run E2E
-        run: npx nx affected --base=main --parallel 1 -t e2e-ci --stop-agents-after=120
+        run: npx nx affected --parallel 1 -t e2e-ci --stop-agents-after=60
       - name: Build
         run: npx nx run ph-balanced:build:production
         env:
