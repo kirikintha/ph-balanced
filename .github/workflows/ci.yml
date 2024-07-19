@@ -42,21 +42,10 @@ jobs:
           npm ci
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
-      - run: |
-          AFFECTED_PROJECTS=$(npx nx print-affected --target=lint --select=projects)
-          if [ -n "$AFFECTED_PROJECTS" ]; then
-            npx nx affected -t lint test build
-          else
-            echo "No affected projects for lint, test, build"
-          fi
-      - run: |
-          AFFECTED_PROJECTS=$(npx nx print-affected --target=e2e-ci --select=projects)
-          if [ -n "$AFFECTED_PROJECTS" ]; then
-            npx nx affected --parallel 1 -t e2e-ci
-          else
-            echo "No affected projects for e2e-ci"
-          fi
+      - run: npx nx affected -t lint test
+      - run: npx nx affected --parallel 1 -t e2e-ci
       - run: npx nx run ph-balanced:build:production
+
       # Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4.0.2
