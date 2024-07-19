@@ -39,11 +39,13 @@ jobs:
       # But, because this is just me pushing out to one space - going to change this in the future.
       - run: |
           echo "NODE_ENV=development" >> $GITHUB_ENV
+          echo "NODE_OPTIONS=--no-deprecation" >> $GITHUB_ENV
           npm ci
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
-      - run: npx nx affected -t lint test
-      - run: npx nx affected --parallel 1 -t e2e-ci
+      - run: npx nx run ph-balanced:lint
+      - run: npx nx run ph-balanced:test
+      - run: npx nx run ph-balanced:e2e-ci
       - run: npx nx run ph-balanced:build:production
 
       # Configure AWS credentials
