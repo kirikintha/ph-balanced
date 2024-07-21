@@ -10,21 +10,23 @@ const Content = () => {
         <section>
           <h2>Finding the right Balance</h2>
           <p>
-            Yes, "AI" is out there and we're embracing it, here at PH-Balanced we lead by
-            example.
+            Yes, "AI" is out there and we're embracing it, here at PH-Balanced
+            we lead by example.
           </p>
           <p>
-            Generative AI has had a big leap forward and it is rewarding to see how much
-            it can accomplish in a short period of time. However it is not
-            perfect and has limitations.
+            Generative AI has had a big leap forward and it is rewarding to see
+            how much it can accomplish in a short period of time. However it is
+            not perfect and has limitations.
           </p>
           <p>
-            We want to challenge you to take a deep dive on the generated images we created. Be critical of the output. There is a logic behind the images and
-            the styles we chose and prompts we engineered.
+            We want to challenge you to take a deep dive on the generated images
+            we created. Be critical of the output. There is a logic behind the
+            images and the styles we chose and prompts we engineered.
           </p>
           <p>
-            What we want you to learn from your deep dive is that if you are expecting Machine Learning, Deep learning and neural nets
-            to be a magic wand to wave, change your expectations.
+            What we want you to learn from your deep dive is that if you are
+            expecting Machine Learning, Deep learning and neural nets to be a
+            magic wand to wave, change your expectations.
           </p>
           <p>
             For the foreseeable future, AI is still very much learning and
@@ -97,8 +99,8 @@ const Content = () => {
         <section>
           <h2>Finding the right technology</h2>
           <p>
-            Vendor Assessments, Security Assessments, build vs. buy, TCO, ROI, SOC.
-            It's a lot to handle.
+            Vendor Assessments, Security Assessments, build vs. buy, TCO, ROI,
+            SOC. It's a lot to handle.
           </p>
           <p>
             Finding the right technology is simultaneously the most trivial and
@@ -129,7 +131,8 @@ const Content = () => {
           <p>
             Critical thinking is not about lurking on social media and then
             deciding what the next trend is by scrolling your feed and saying:
-            "I want to be the next...". That rarely if ever works without a lot of capital investment.
+            "I want to be the next...". That rarely if ever works without a lot
+            of capital investment.
           </p>
           <p>
             At PH-Balanced, we did the whole social media thing and we've gone
@@ -161,8 +164,8 @@ const Content = () => {
             world is a funny 'ol place.
           </p>
           <p>
-            Our goal at PH-Balanced is to provide a really healhty work experience.
-            The best ideas come from when we have fun.
+            Our goal at PH-Balanced is to provide a really healthy work
+            experience. The best ideas come from when we have fun.
           </p>
           <p>
             Every image here, the CSS and some of the coding was done with an AI
@@ -185,7 +188,9 @@ const Content = () => {
           <h2>Communicating Results</h2>
           <p>
             At the core of our delivery strategy is supplying you with a way to
-            communicate back to your stakeholders with honesty and conviction. We want you to know that when you speak, you can back up what you say.
+            communicate back to your stakeholders with honesty and conviction.
+            We want you to know that when you speak, you can back up what you
+            say.
           </p>
           <p>
             What drives this core is the ability to see the micro and macro
@@ -247,11 +252,12 @@ const Content = () => {
         </section>
         <section>
           <h2>A desire to learn</h2>
-          <p>
-            Our vision statement is this: 
-          </p>
-          <blockquote className="blockquote text-center"><p>You are only limited by your
-          imagination, and a desire to learn.</p></blockquote>
+          <p>Our vision statement is this:</p>
+          <blockquote className="blockquote text-center">
+            <p>
+              You are only limited by your imagination, and a desire to learn.
+            </p>
+          </blockquote>
           <p>
             Our goal is to learn everything we can about your organization, your
             mission, your culture and how you are successful.
