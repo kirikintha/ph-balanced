@@ -241,7 +241,7 @@ const Content = () => {
             valued. We're not interested in changing that.
           </p>
           <p>
-            But, we will always look to future technology and give it a go. It's
+            Having said that, we will always look to future technology and give it a go. It's
             only human.
           </p>
         </section>
