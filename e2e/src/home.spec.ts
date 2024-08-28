@@ -2,19 +2,21 @@ import { test, expect } from '@playwright/test';
 
 test('Home', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('video[src="/assets/LA-Noir.mov"]')).toBeVisible();
   await expect(
-    page.locator('video[src="/assets/Jazz-Noir.mov"]')
-  ).toBeVisible();
+    page.locator('source[src="/assets/Los-Angeles-Noir.mp4"]')
+  ).toBeHidden();
   await expect(
-    page.locator('video[src="/assets/CoSprings-Noir.mov"]')
-  ).toBeVisible();
+    page.locator('source[src="/assets/Jazz-Noir.mp4"]')
+  ).toBeHidden();
   await expect(
-    page.locator('video[src="/assets/Desert-Noir.mov"]')
-  ).toBeVisible();
+    page.locator('source[src="/assets/CoSprings-Noir.mp4"]')
+  ).toBeHidden();
   await expect(
-    page.locator('video[src="/assets/Savannah-Noir.mov"]')
-  ).toBeVisible();
+    page.locator('source[src="/assets/Desert-Noir.mp4"]')
+  ).toBeHidden();
+  await expect(
+    page.locator('source[src="/assets/Savannah-Noir.mp4"]')
+  ).toBeHidden();
   await expect(
     page.getByRole('heading', { name: 'Finding the right Balance' })
   ).toBeVisible();
@@ -37,7 +39,7 @@ test('Home', async ({ page }) => {
     page.getByRole('heading', { name: 'Communicating Results' })
   ).toBeVisible();
   await expect(
-    page.getByRole('heading', { name: 'Developing the next Move' })
+    page.getByRole('heading', { name: 'Developing the next move' })
   ).toBeVisible();
   await expect(
     page.getByRole('heading', { name: 'A desire to learn' })
