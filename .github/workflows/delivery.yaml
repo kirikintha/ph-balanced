@@ -40,6 +40,7 @@ jobs:
       # But, because this is just me pushing out to one space - going to change this in the future.
       - run: |
           echo "NODE_ENV=production" >> $GITHUB_ENV
+          npm install
           npm ci
 
       - name: Build
