@@ -27,13 +27,14 @@ jobs:
       # Cache node_modules
       - uses: actions/setup-node@v3
         with:
-          node-version: 22.3.0
+          node-version: 22
           cache: 'npm'
 
       # This should really go into a separate command, then environments for non-prod prod
       # But, because this is just me pushing out to one space - going to change this in the future.
       - run: |
           echo "NODE_ENV=development" >> $GITHUB_ENV
+          npm install
           npm ci
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
