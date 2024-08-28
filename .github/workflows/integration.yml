@@ -35,7 +35,7 @@ jobs:
       - run: |
           echo "NODE_ENV=development" >> $GITHUB_ENV
           npm install
-          npx playwright install
+          npx playwright install --with-dep
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       - name: Run Linter
