@@ -16,6 +16,9 @@ jobs:
     if: github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     environment: Production
+    env:
+      BASE_BRANCH: main
+      PR_BRANCH: ${{ github.event.pull_request.head.ref }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,8 +42,8 @@ jobs:
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       - name: Run Linter
-        run: npx nx affected:lint
+        run: npx nx affected:lint --base=$BASE_BRANCH --head=$PR_BRANCH
       - name: Run Tests
-        run: npx nx affected:test
+        run: npx nx affected:test --base=$BASE_BRANCH --head=$PR_BRANCH
       - name: Run E2E
-        run: npx nx affected --parallel 1 -t e2e-ci
+        run: npx nx affected --parallel 1 -t e2e-ci --base=$BASE_BRANCH --head=$PR_BRANCH
