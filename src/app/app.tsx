@@ -104,7 +104,10 @@ export function App() {
             </a>
           </p>
           <p>
-            <a href="https://blog.ph-balanced.com" target="_blank" rel="noreferrer">Blog</a>
+            <a href="https://blog.ph-balanced.com" 
+              className="link-underline-light text-white"
+              target="_blank" 
+              rel="noreferrer">Blog</a>
           </p>
         </div>
       </footer>
