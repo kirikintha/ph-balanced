@@ -97,9 +97,14 @@ export function App() {
             <a
               href="https://calendly.com/paul-huntsberger/thirty-minute-meeting"
               className="link-underline-light text-white"
+              target="_blank"
+              rel="noreferrer"
             >
               Schedule a Meeting
             </a>
+          </p>
+          <p>
+            <a href="https://blog.ph-balanced.com" target="_blank" rel="noreferrer">Blog</a>
           </p>
         </div>
       </footer>
