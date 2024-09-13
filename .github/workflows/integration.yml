@@ -20,8 +20,12 @@ jobs:
       BASE_BRANCH: ${{ github.event.pull_request.head.ref }}
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        name: Checkout PR Head
         with:
-          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: ${{ github.event.pull_request.head.ref }}
 
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
@@ -41,8 +45,8 @@ jobs:
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       - name: Run Linter
-        run: npx nx affected:lint --base=$BASE_BRANCH --head=HEAD
+        run: npx nx affected:lint --base=origin/$BASE_BRANCH --head=HEAD
       - name: Run Tests
-        run: npx nx affected:test --base=$BASE_BRANCH --head=HEAD
+        run: npx nx affected:test --base=origin/$BASE_BRANCH --head=HEAD
       - name: Run E2E
-        run: npx nx affected --parallel 1 -t e2e-ci --base=$BASE_BRANCH --head=HEAD
+        run: npx nx affected --parallel 1 -t e2e-ci --base=origin/$BASE_BRANCH --head=HEAD
