@@ -19,6 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # Keeping the checkout name as "main" so that NX identifies
+          # the correct branch to run the affected commands on.
           ref: main
           fetch-depth: 2
 
