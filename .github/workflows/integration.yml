@@ -30,7 +30,7 @@ jobs:
       # Cache node_modules
       - uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 22.6.0
           cache: 'npm'
 
       # This should really go into a separate command, then environments for non-prod prod
