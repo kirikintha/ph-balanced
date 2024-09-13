@@ -20,12 +20,9 @@ jobs:
       BASE_BRANCH: ${{ github.event.pull_request.head.ref }}
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/checkout@v4
-        name: Checkout PR Head
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          path: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 2
 
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
