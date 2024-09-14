@@ -15,7 +15,7 @@ jobs:
   main:
     if: github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
-    environment: Production
+    environment: Stable
     env:
       PR_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
     steps:
