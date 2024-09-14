@@ -16,13 +16,19 @@ jobs:
     if: github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     environment: Production
+    env:
+      PR_BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
     steps:
       - uses: actions/checkout@v4
         with:
-          # Keeping the checkout name as "main" so that NX identifies
-          # the correct branch to run the affected commands on.
-          ref: main
-          fetch-depth: 2
+          fetch-depth: 0
+
+      - uses: nrwl/nx-set-shas@v4
+        name: Derive appropriate SHAs for base and head for `nx affected` commands
+
+      - run: |
+          echo "BASE: ${{ env.NX_BASE }}"
+          echo "HEAD: ${{ env.NX_HEAD }}"
 
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "e2e-ci" targets have been requested
@@ -42,8 +48,8 @@ jobs:
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       - name: Run Linter
-        run: npx nx affected:lint
+        run: npx nx affected:lint --base=$NX_BASE --head=$NX_HEAD
       - name: Run Tests
-        run: npx nx affected:test
+        run: npx nx affected:test --base=$NX_BASE --head=$NX_HEAD
       - name: Run E2E
-        run: npx nx affected --parallel 1 -t e2e-ci
+        run: npx nx affected --parallel 1 -t e2e --base=$NX_BASE --head=$NX_HEAD
