@@ -26,7 +26,7 @@
     "@nx/eslint": "19.6.5",
     "@nx/eslint-plugin": "20.3.3",
     "@nx/js": "19.4.2",
-    "@nx/playwright": "19.4.2",
+    "@nx/playwright": "20.8.1",
     "@nx/react": "19.4.2",
     "@nx/vite": "19.6.5",
     "@nx/web": "19.6.3",
